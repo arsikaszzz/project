@@ -240,8 +240,16 @@
       0.1,
       400
     );
-    camera.position.set(0, 6.2, -11);
-    camera.lookAt(0, 2.2, 12);
+    const camRig = {
+      offsetX: -8.5,
+      offsetY: 6.2,
+      offsetZ: -5.5,
+      lookAhead: 11.0,
+      lookY: 2.2,
+    };
+    // Dino starts at z=4, we just hard-code initial cam pos near it.
+    camera.position.set(camRig.offsetX, camRig.offsetY, 4 + camRig.offsetZ);
+    camera.lookAt(0, camRig.lookY, 4 + camRig.lookAhead);
 
     // ------------------------------------------------------------------
     // Lighting (soft, modern, slightly warm)
@@ -1013,18 +1021,24 @@
         }
       }
 
-      // Camera follow + tiny shake on death
-      const targetY = 6.2 + Math.min(dino.position.y * 0.15, 1.2);
-      camera.position.y += (targetY - camera.position.y) * 0.08;
+      // Camera follow + tiny shake on death (3/4 side view)
+      const tx = camRig.offsetX;
+      const ty = camRig.offsetY + Math.min(dino.position.y * 0.12, 1.0);
+      const tz = dino.position.z + camRig.offsetZ;
+      camera.position.x += (tx - camera.position.x) * 0.1;
+      camera.position.y += (ty - camera.position.y) * 0.08;
+      camera.position.z += (tz - camera.position.z) * 0.15;
       if (STATE.cameraShake > 0) {
-        camera.position.x = (Math.random() - 0.5) * STATE.cameraShake;
+        camera.position.x += (Math.random() - 0.5) * STATE.cameraShake;
+        camera.position.y += (Math.random() - 0.5) * STATE.cameraShake * 0.5;
         STATE.cameraShake *= 0.9;
-        if (STATE.cameraShake < 0.02) {
-          STATE.cameraShake = 0;
-          camera.position.x = 0;
-        }
+        if (STATE.cameraShake < 0.02) STATE.cameraShake = 0;
       }
-      camera.lookAt(0, 2.2, dino.position.z + 8);
+      camera.lookAt(
+        dino.position.x,
+        camRig.lookY + dino.position.y * 0.3,
+        dino.position.z + camRig.lookAhead
+      );
 
       // Sun follows along z
       sun.position.z = dino.position.z - 20;
