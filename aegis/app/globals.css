@@ -11,10 +11,6 @@
   --color-accent: #B08D57;
   --color-accent-soft: #6E5836;
   --color-danger: #7A1F1F;
-
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
 }
 
 @theme inline {
