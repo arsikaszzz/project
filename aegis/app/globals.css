@@ -28,6 +28,10 @@
   --color-accent: var(--color-accent);
   --color-accent-soft: var(--color-accent-soft);
   --color-danger: var(--color-danger);
+
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
 }
 
 html {
