@@ -35,10 +35,10 @@ export function Footer() {
             <a href={`mailto:${brand.email}`} className="flex items-center gap-3 hover:text-accent transition-colors">
               <Mail size={16} /> {brand.email}
             </a>
-            <a href={`https://t.me/${brand.telegram.replace('@', '')}`} target="_blank" className="flex items-center gap-3 hover:text-accent transition-colors">
+            <a href={`https://t.me/${brand.telegram.replace('@', '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-accent transition-colors">
               <span>Telegram</span>
             </a>
-            <a href={`https://instagram.com/${brand.instagram.replace('@', '')}`} target="_blank" className="flex items-center gap-3 hover:text-accent transition-colors">
+            <a href={`https://instagram.com/${brand.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-accent transition-colors">
               <Instagram size={16} /> {brand.instagram}
             </a>
             <a href={`https://youtube.com/${brand.youtube}`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-accent transition-colors">
