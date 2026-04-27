@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-line bg-surface pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-y-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Brand */}
         <div className="md:col-span-4">
           <div className="font-display text-3xl tracking-[-0.02em] mb-4">{brand.name}</div>

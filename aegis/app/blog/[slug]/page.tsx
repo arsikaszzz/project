@@ -7,6 +7,7 @@ const dateFmt = new Intl.DateTimeFormat("ru-RU", {
   day: "numeric",
   month: "long",
   year: "numeric",
+  timeZone: "UTC",
 });
 
 interface BlogPostPageProps {
