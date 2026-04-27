@@ -9,7 +9,7 @@ import { SpartanGridBackground } from "@/components/animation/SpartanGridBackgro
 import { brand } from "@/data/brand";
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-sans",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-text">
         <SpartanGridBackground />

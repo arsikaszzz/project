@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-line">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+      <div className="relative z-[60] max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link href="/" className="font-display text-2xl tracking-[-0.02em] text-text" onClick={closeMenu}>
           {brand.name}
         </Link>
